@@ -1,0 +1,14 @@
+{
+  "name": "React 19 Dev Container",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "react-app",
+  "workspaceFolder": "/app",
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/sh"
+  },
+  "extensions": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode"
+  ],
+  "postCreateCommand": "npm install"
+}

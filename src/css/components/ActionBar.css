@@ -1,0 +1,14 @@
+
+.action-bar 
+{
+  padding: 0.5rem 1rem;
+  background: #f4f4f4;
+  display: flex;
+  justify-content: space-between;
+  width:calc(100vw - 160px);
+  align-items: center;
+  position:absolute;
+  top: 128px;
+  left:140px;
+  z-index: 998;
+}
