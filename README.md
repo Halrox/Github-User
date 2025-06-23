@@ -1,81 +1,78 @@
 # GitHub User Search App
 
-Une application React 19 moderne permettant de rechercher des utilisateurs GitHub via leur API publique.
+Searching GitHub users via the public GitHub API.
 
-##  Stack technique
+## Tech Stack
 
-- **React 19** + **TypeScript**
-- **Vite** (build et dev server)
-- **Docker + Docker Compose**
-- **CSS Modules structurés**
-- **React Testing Library + Jest** (tests unitaires)
-- **Architecture modulaire & SOLID**
+- React 19 with TypeScript
+- Vite (build and dev server)
+- Docker + Docker Compose
+- CSS Modules
+- React Testing Library + Jest
+- Modular architecture following SOLID principles
 
-## Structure
+## Project Structure
 
 ```
 src/
-├── assets/               # Logos et icônes SVG
-├── components/           # Composants UI réutilisables
+├── assets/               # Static assets like logos and icons
+├── components/           # Reusable UI components
 ├── css/
-│   ├── components/       # CSS scoped par composant
-│   ├── pages/            # CSS spécifiques aux pages
-│   └── main/             # CSS global
-├── hooks/                # Hooks custom : useSelection, useGitHubUsers
-├── pages/                # Pages : Home, UserGithub
-├── test/                 # Tests unitaires (composants + pages)
-├── types/                # Typages centralisés (User, ApiError)
-└── main.tsx              # Entrée de l'application
+│   ├── components/       # Component-scoped CSS
+│   ├── pages/            # Page-specific CSS
+│   └── main/             # Global styles
+├── hooks/                # Custom hooks: useSelection, useGitHubUsers
+├── pages/                # Application pages: Home, UserGithub
+├── test/                 # Unit tests
+├── types/                # TypeScript type definitions
+└── main.tsx              # Application entry point
 ```
 
-## Lancement avec Docker
+## Running with Docker
 
-### 1. Prérequis
+### Prerequisites
 
 - Docker
 - Docker Compose
 
-### 2. Lancer en mode développement :
+### Start in development mode:
 
 ```bash
 docker-compose up
 ```
 
-L'application sera disponible sur :
-🔗 http://localhost:3000
+The application will be available at: http://localhost:3000
 
-
-## Lancer les tests
+## Running tests
 
 ```bash
 npm test
 ```
 
-Les tests utilisent :
+The tests use:
 
-- `@testing-library/react`
-- `jest`
-- `jest-dom`
-- Mocks des hooks pour isoler les composants
+- @testing-library/react
+- jest
+- jest-dom
+- Hook mocks for isolated logic testing
 
-## Fonctionnalités
+## Features
 
-- Recherche dynamique d'utilisateurs GitHub (`GET /search/users?q=`)
-- Affichage sous forme de cartes utilisateurs
-- Mode édition :
-  - Sélection multiple
-  - Duplication (front only)
-  - Suppression (front only)
-- Gestion des erreurs API (`rate_limit`, `network`)
-- Responsive
-- Accessibilité
-- Composants testés individuellement
+- Live search for GitHub users (`GET /search/users?q=`)
+- Displays results as user cards
+- Edit mode:
+  - Multi-selection
+  - Duplication (frontend only)
+  - Deletion (frontend only)
+- API error handling (`rate_limit`, `network`)
+- Responsive layout
+- Accessible
+- Unit-tested components
 
-## Bonnes pratiques appliquées
+## Best Practices
 
 - Separation of concerns (SOLID)
-- Typage strict avec `types/User.ts` et `types/Api.ts`
-- Aucun ajout de dépendance inutile
-- CSS organisé par contexte
-- Tests unitaires présents et isolés
-- Docker Dev-friendly
+- Strong typing using TypeScript in `types/`
+- No unnecessary dependencies
+- CSS organized by component and page
+- Fully dockerized for consistent development
